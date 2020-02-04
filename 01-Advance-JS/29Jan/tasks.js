@@ -200,15 +200,15 @@
 
 // use the array above as the main data structure and solve the following scenarios
 
-/* 
-1. Create a functionality that adds a new user to our data array 
+/*
+1. Create a functionality that adds a new user to our data array
 with the default amount as 100 if no amount is explicitly provided
 
-2. create a feature as such it allows us to remove a particular account 
-from our data just by passing in the account name 
+2. create a feature as such it allows us to remove a particular account
+from our data just by passing in the account name
 
-3. Create a feature that allows us to search a particular user from our 
-given array just by giving in the name or amount 
+3. Create a feature that allows us to search a particular user from our
+given array just by giving in the name or amount
 */
 // ***********************************
 

@@ -1,18 +1,13 @@
 // SET
 
-/************************************************** */
+/** ************************************************ */
 // Try any part one at a time
 
-const newSet = new Set(["Umair", "Ahmed", "Umair"]);
+const newSet = new Set(['Umair', 'Ahmed', 'Umair'])
 
-console.log(newSet);    // Result: Set(2) {"Umair", "Ahmed"}
+console.log(newSet) // Result: Set(2) {"Umair", "Ahmed"}
 
-
-
-
-/************************************************** */
-
-
+/** ************************************************ */
 
 // const newSet = new Set();
 
@@ -26,10 +21,7 @@ console.log(newSet);    // Result: Set(2) {"Umair", "Ahmed"}
 
 // console.log(newSet);    // Result: Set(2) {"Umair", "Ahmed"}
 
-
-
-/************************************************** */
-
+/** ************************************************ */
 
 // const newSet = new Set();
 

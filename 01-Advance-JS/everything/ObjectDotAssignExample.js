@@ -1,21 +1,18 @@
 // Object.assign
 
-/************************************************** */
+/** ************************************************ */
 // Try any part one at a time
 
-let obj1 = { fname: "Umair" }
-let obj2 = { lname: "Ahmed" }
+const obj1 = { fname: 'Umair' }
+const obj2 = { lname: 'Ahmed' }
 
-let newObj = Object.assign({}, obj1, obj2)
+const newObj = Object.assign({}, obj1, obj2)
 
-console.log("obj1", obj1)       //RESULT: obj1 {fname: "Umair"}
-console.log("obj2", obj2)       //RESULT: obj2 {lname: "Ahmed"}
-console.log("newObj", newObj)   //RESULT: newObj {fname: "Umair", lname: "Ahmed"}
+console.log('obj1', obj1) // RESULT: obj1 {fname: "Umair"}
+console.log('obj2', obj2) // RESULT: obj2 {lname: "Ahmed"}
+console.log('newObj', newObj) // RESULT: newObj {fname: "Umair", lname: "Ahmed"}
 
-
-
-/************************************************** */
-
+/** ************************************************ */
 
 // let obj1 = {
 //     fname: "Irfan",

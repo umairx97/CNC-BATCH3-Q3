@@ -1,16 +1,14 @@
 // ARROW FUNCTIONS
 
-
 /* ============================================================= */
 // Try any part one at a time
 
 const myFunction = text => {
-    let name = "Welcome " + text
-    return name
+  const name = 'Welcome ' + text
+  return name
 }
-let msg = myFunction("Umair")
-console.log(msg)  // Result: Welcome Umair
-
+const msg = myFunction('Umair')
+console.log(msg) // Result: Welcome Umair
 
 /* ============================================================= */
 
@@ -18,7 +16,6 @@ console.log(msg)  // Result: Welcome Umair
 
 // let msg = myFunction("Umair")
 // console.log(msg)  // Result: Welcome Umair
-
 
 /* ============================================================= */
 
