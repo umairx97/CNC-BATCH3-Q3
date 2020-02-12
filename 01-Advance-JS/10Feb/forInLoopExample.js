@@ -4,10 +4,10 @@
 // Try any part one at a time
 
 // OLD "for" loop
-const myArray = { firstName: 'Umair', lastName: 'Ahmed', degrees: 2 }
+const myObj = { firstName: 'Umair', lastName: 'Ahmed', degrees: 2 }
 
 for (let i = 0; i < 3; i++) {
-  console.log(myArray[i])
+  console.log(myObj[i])
 }
 // RESULT:
 // Undefined
@@ -17,10 +17,10 @@ for (let i = 0; i < 3; i++) {
 /** ************************************************ */
 // New "for in" loop on object values
 
-// const myArray = { firstName: "Umair", lastName: "Ahmed", degrees: 2 }
+// const myObj = { firstName: "Umair", lastName: "Ahmed", degrees: 2 }
 
-// for (i in myArray) {
-//     console.log(myArray[i])
+// for (i in myObj) {
+//     console.log(myObj[i])
 // }
 
 // RESULT
@@ -31,9 +31,9 @@ for (let i = 0; i < 3; i++) {
 /** ************************************************ */
 // "For in" loop on Object keys
 
-// const myArray = { firstName: "Umair", lastName: "Ahmed", degrees: 2 }
+// const myObj = { firstName: "Umair", lastName: "Ahmed", degrees: 2 }
 
-// for (i in myArray) {
+// for (i in myObj) {
 //     console.log(i)
 // }
 
