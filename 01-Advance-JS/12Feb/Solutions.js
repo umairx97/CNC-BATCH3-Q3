@@ -1,4 +1,4 @@
-import { cohorts, courses, participationGrade, students, studyGroup } from './data.js'
+// import { cohorts, courses, participationGrade, students, studyGroup } from './data.js'
 
 // **************************************
 // TASK 1 SOLUTION
@@ -66,12 +66,45 @@ import { cohorts, courses, participationGrade, students, studyGroup } from './da
 // console.log(grades)
 
 // *********************************
-// TASK 7 SOLUTION
-// const eligible = eligibleStudents.filter(item => {
-//     const skills = item.skills
-//     const age = item.age
-//     const grade = item.grade
-//     return skills.includes('MERN') && age > 20 && grade > 95 && item
-//   })
+// TASK 8 SOLUTION
+// const eligibleStudents = [
+//     {
+//       id: 1,
+//       name: 'Umair Ahmed',
+//       profession: 'Fullstack Developer and DevOps Engineer',
+//       grade: 100,
+//       age: 22,
+//       skills: ['MERN', 'DevOps', 'GraphQL', 'Apollo Client']
+//     },
+//     {
+//       id: 2,
+//       name: 'Asad Ikhlas',
+//       profession: 'Fullstack Developer and DevOps Engineer',
+//       grade: 90,
+//       age: 23,
+//       skills: ['MERN', 'GraphQL', 'Apollo Client']
+//     }
+//   ]
+// const eligible = eligibleStudents.find(item => item.skills.includes('MERN') && item.age > 20 && item.grade > 95)
+// console.log(eligible)
 
-//   console.log(eligible)
+// *********************************
+// TASK 9 SOLUTION
+// const initialState = {
+//     name: "Umair",
+//     age: 22
+// }
+// const reducer = (state = initialState, action) => {
+//     switch (action.type) {
+//         case "USER_LOGIN":
+//             return { ...state, name: action.payload.name }
+//         default:
+//             return state
+//     }
+// }
+// const action = {
+//     type: "USER_LOGIN",
+//     payload: { name: "Asad", age: 22 }
+// }
+
+// console.log(reducer(initialState, action))
