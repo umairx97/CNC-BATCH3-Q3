@@ -1,28 +1,22 @@
-import React, { Fragment } from 'react'
-import { render } from 'react-dom'
+import React, { Component } from "react";
+import { render } from "react-dom";
+import { BrowserRouter, Route, Switch, Link, Redirect } from "react-router-dom";
+import Profile from "./components/Profile/Profile";
+import NavigationBar from "./components/NavigationBar/NavigationBar";
+import App from "./App";
 
-
-const App = (props) => {
-  console.log(props)
-  return (
-    <div><h1>This is a nested Component {props.name}</h1></div>
-  )
-}
-
-
-const HOC = ({ component: Component, isLoggedIn, ...rest }) => {
-  return (
-    <Fragment>
-      {isLoggedIn
-        ? <Component name="umair" {...rest} />
-        : alert("You are not authorized to view this component")}
-    </Fragment>
-  )
-}
-
+const Home = () => <h1>This is home Component</h1>;
+const About = () => <h1>This is About Component</h1>;
 
 render(
-  <HOC component={App} exact isLoggedIn={false} />
-  ,
-  document.getElementById('root')
-)
+  <BrowserRouter>
+    <NavigationBar />
+    <Switch>
+      <Route exact path="/" component={App} />
+      <Route exact path="/home" component={Home} />
+      <Route exact path="/about" component={About} />
+      <Route exact path="/profile/:profileId" component={Profile} />
+    </Switch>
+  </BrowserRouter>,
+  document.getElementById("root")
+);
