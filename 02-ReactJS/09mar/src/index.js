@@ -7,29 +7,37 @@ import { Provider } from 'react-redux'
 import { createStore } from 'redux';
 
 const initialState = {
-  number: 0
+  number: 0,
+  user: {
+    name: "umair",
+    age: 22
+  }
 }
 
 const reducer = (state = initialState, action) => {
-  switch(action.type){
-    case "INCREMENT": 
-      return {
-        ...state,
-        number: action.payload.number
-      }
-    
-    case "DECREMENT": 
+  switch (action.type) {
+    case "INCREMENT":
       return {
         ...state,
         number: action.payload.number
       }
 
-    default: 
+    case "DECREMENT":
+      return {
+        ...state,
+        number: action.payload.number
+      }
+
+    default:
       return state
   }
 }
 
-const store = createStore(reducer)
+const store = createStore(
+  reducer,
+  initialState,
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+)
 
 ReactDOM.render(
   <Provider store={store}>

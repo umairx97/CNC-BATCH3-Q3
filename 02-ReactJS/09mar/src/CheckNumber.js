@@ -13,4 +13,6 @@ const CheckNumber = (props) => {
 const mapStateToProps = state => {
   return state
 }
+
+
 export default connect(mapStateToProps)(CheckNumber)
