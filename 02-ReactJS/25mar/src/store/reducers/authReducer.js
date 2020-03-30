@@ -1,4 +1,5 @@
 import { USER_LOGIN_FAILED, USER_LOGIN_SUCCESS, USER_LOGIN } from '../actions/actionTypes'
+
 const initialState = {
   name: 'umair',
   age: 22,
@@ -14,10 +15,10 @@ export const authReducer = (state = initialState, action) => {
       return { ...state, loading: true }
 
     case USER_LOGIN_SUCCESS:
-      return { ...state, successMessage: 'You are logged in' }
+      return { ...state, successMessage: 'You are logged in', loading: false }
 
     case USER_LOGIN_FAILED:
-      return { ...state, erroMessage: 'Incorrect username or password' }
+      return { ...state, erroMessage: 'Incorrect username or password', loading: false }
 
     default:
       return state

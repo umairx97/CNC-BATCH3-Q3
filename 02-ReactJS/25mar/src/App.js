@@ -7,9 +7,11 @@ class App extends React.Component {
   componentDidMount() {
     setInterval(() => {
       this.props.dispatch(userLoginSuccess())
-      this.props.dispatch(userAction({
-        user: { name: 'umair', age: 22 }
-      }))
+      this.props.dispatch(userAction(
+        {
+          user: { name: 'umair', age: 22 }
+        }
+      ))
     }, 2000);
   }
 
