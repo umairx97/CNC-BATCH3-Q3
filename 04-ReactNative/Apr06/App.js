@@ -1,63 +1,81 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow strict-local
- */
+import React, { Component, Fragment } from 'react';
+import {
+  Text,
+  View,
+  StyleSheet,
+  StatusBar,
+  TextInput,
+  Button,
+  FlatList,
+  Dimensions,
+} from 'react-native';
+import Carousel from 'react-native-snap-carousel';
 
-import React, { Fragment } from 'react';
-import { View, Text, StyleSheet, Image, TextInput } from 'react-native';
-import { Button } from 'native-base';
+import { Container, Header, Content, List, ListItem } from 'native-base';
+export class App extends Component {
+  state = {
+    todoText: '',
+    todos: [],
+  };
 
-const App = () => {
-  return (
-    <Fragment>
-      <View style={styles.container}>
-        <Image
-          source={require('./assets/CardImg1.png')}
-          style={styles.imageContainer}
-        />
-        <TextInput
-          placeholder="Enter Username"
-          textContentType="nickname"
-          style={styles.inputField}
-        />
-        <TextInput
-          placeholder="Enter Password"
-          textContentType="password"
-          style={styles.inputField}
-        />
-        <Button
-          style={styles.loginBtn}
-          onPress={() => console.log('Button was clicked')}
-          success>
-          <Text style={{ fontSize: 20, color: 'white' }}>Login</Text>
-        </Button>
+  addTodo = () => {
+    const { todoText, todos } = this.state;
+    const merged = [...todos, todoText];
+    this.setState({ todos: merged });
+  };
+
+  _renderItem = ({ item, index }) => {
+    return (
+      <View>
+        <Text style={{ backgroundColor: 'dodgerblue', height: 150 }}>
+          {item}
+        </Text>
       </View>
-    </Fragment>
-  );
-};
+    );
+  };
+
+  render() {
+    return (
+      <View style={styles.container}>
+        <TextInput
+          onChangeText={(value) => this.setState({ todoText: value })}
+          placeholder="Enter Todo"
+          style={{ width: '100%', backgroundColor: 'lightgrey' }}
+        />
+        <Text>{'\n'}</Text>
+        <Button title="Add Todo" onPress={() => this.addTodo()} />
+        <Carousel
+          layout={'stack'}
+          data={this.state.todos}
+          renderItem={this._renderItem}
+          sliderWidth={Dimensions.get('screen').width}
+          itemWidth={150}
+        />
+        {/* <List
+            style={{
+              width: '100%',
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}>
+            {this.state.todos.map((todo, index) => (
+              <ListItem
+                style={{
+                  borderBottomColor: 'red',
+                  borderBottomWidth: 1,
+                }}
+                key={index}>
+                <Text style={{ textAlign: 'center' }}>{todo}</Text>
+              </ListItem>
+            ))}
+          </List> */}
+      </View>
+    );
+  }
+}
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  imageContainer: {
-    height: 200,
-    width: 200,
-  },
-  inputField: {
-    fontSize: 20,
-    width: '70%',
-    borderBottomColor: 'grey',
-    borderBottomWidth: 1,
-    marginBottom: 10,
-  },
-  loginBtn: {
-    width: '70%',
     justifyContent: 'center',
     alignItems: 'center',
   },
